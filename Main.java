@@ -156,7 +156,20 @@ public class Main {
         return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
     }
 
-
+//10
+    /**
+     * Recursively computes the Greatest Common Divisor (GCD) of two integers using the Euclidean algorithm.
+     * Time complexity: O(log(min(a, b))) in the average case.
+     * @param a the first integer.
+     * @param b the second integer.
+     * @return the greatest common divisor of a and b.
+     */
+    private static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
 
     public static void main(String[] args) {
 // 1
@@ -297,5 +310,23 @@ public class Main {
         duration = (endTime - startTime) / 1000000.0;
         System.out.println("Problem 9: C(" + n2 + "," + k2 + ") is: " + binom2);
         System.out.println("Time taken: " + duration + " milliseconds");
+
+        //10
+        int a1 = 32, b1 = 48;
+        int a2 = 10, b2 = 7;
+        startTime = System.nanoTime();
+        int gcd1 = gcd(a1, b1);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 10: GCD(" + a1 + "," + b1 + ") is: " + gcd1);
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+        startTime = System.nanoTime();
+        int gcd2 = gcd(a2, b2);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 10: GCD(" + a2 + "," + b2 + ") is: " + gcd2);
+        System.out.println("Time taken: " + duration + " milliseconds");
     }
+
 }
