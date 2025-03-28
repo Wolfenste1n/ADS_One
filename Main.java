@@ -33,6 +33,33 @@ public class Main {
         }
         return arr[index] + sumArrayRec(arr, index + 1);
     }
+//3
+    /**
+     * This method checks if a number is prime.
+     * Time complexity: O(n) in the worst-case scenario, where n is the number.
+     * @param n the number to be checked.
+     * @param divisor the current divisor being tested.
+     * @return true if the number is prime, false otherwise.
+     */
+    private static boolean isPrime(int n, int divisor) {
+        if (n <= 2) {
+            if (n == 2) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if (divisor > n / 2) {
+            return true;
+        }
+        if (n % divisor == 0) {
+            return false;
+        }
+        return isPrime(n, divisor + 1);
+    }
+
+
+
 
 
 
@@ -56,5 +83,33 @@ public class Main {
         duration = (endTime - startTime) / 1000000.0;
         System.out.println("Problem 2: Average is: " + avgResult);
         System.out.println("Time taken: " + duration + " milliseconds");
+
+//3
+        int testPrime1 = 7;
+        int testPrime2 = 10;
+        startTime = System.nanoTime();
+        boolean isPrime1 = isPrime(testPrime1, 2);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.print("Problem 3: " + testPrime1 + " is ");
+        if (isPrime1) {
+            System.out.println("Prime");
+        } else {
+            System.out.println("Composite");
+        }
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+        startTime = System.nanoTime();
+        boolean isPrime2 = isPrime(testPrime2, 2);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.print("Problem 3: " + testPrime2 + " is ");
+        if (isPrime2) {
+            System.out.println("Prime");
+        } else {
+            System.out.println("Composite");
+        }
+        System.out.println("Time taken: " + duration + " milliseconds");
+
     }
 }
