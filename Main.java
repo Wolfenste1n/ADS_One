@@ -38,7 +38,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-//1
+// 1
         int[] array1 = {10, 1, 32, 3, 45};
         double startTime = System.nanoTime();
         int minResult = findMin(array1, 0);
