@@ -73,7 +73,22 @@ public class Main {
         }
     }
 
-
+//5
+    /**
+     * This method calculates the n-th Fibonacci number.
+     * Time complexity: Exponential in n (O(2^n)), as the recursion tree grows exponentially.
+     * @param n the index in the Fibonacci sequence.
+     * @return the n-th Fibonacci number.
+     */
+    private static int fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
 
 
     public static void main(String[] args) {
@@ -131,6 +146,23 @@ public class Main {
         endTime = System.nanoTime();
         duration = (endTime - startTime) / 1000000.0;
         System.out.println("Problem 4: Factorial of " + factorialInput + " is: " + factResult);
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+        //5
+        int fibInput1 = 5;
+        int fibInput2 = 17;
+        startTime = System.nanoTime();
+        int fibResult1 = fibonacci(fibInput1);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 5: Fibonacci of " + fibInput1 + " is: " + fibResult1);
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+        startTime = System.nanoTime();
+        int fibResult2 = fibonacci(fibInput2);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 5: Fibonacci of " + fibInput2 + " is: " + fibResult2);
         System.out.println("Time taken: " + duration + " milliseconds");
     }
 }
