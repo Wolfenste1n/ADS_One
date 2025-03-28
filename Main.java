@@ -106,6 +106,21 @@ public class Main {
         return a * power(a, n - 1);
     }
 
+    //7
+    /**
+     * Recursively prints the elements of an array in reverse order.
+     * Time complexity: O(n), where n is the number of elements in the array.
+     * @param arr the array of integers.
+     * @param index the current index for printing.
+     */
+    private static void printReverse(int[] arr, int index) {
+        if (index < 0) {
+            return;
+        }
+        System.out.print(arr[index] + " ");
+        printReverse(arr, index - 1);
+    }
+
     public static void main(String[] args) {
 // 1
         int[] array1 = {10, 1, 32, 3, 45};
@@ -189,6 +204,16 @@ public class Main {
         endTime = System.nanoTime();
         duration = (endTime - startTime) / 1000000.0;
         System.out.println("Problem 6: " + base + "^" + exponent + " is: " + powerResult);
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+        //7
+        int[] array7 = {1, 4, 6, 2};
+        System.out.print("Problem 7: Reversed array is: ");
+        startTime = System.nanoTime();
+        printReverse(array7, array7.length - 1);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println();
         System.out.println("Time taken: " + duration + " milliseconds");
 
     }
