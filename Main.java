@@ -90,6 +90,21 @@ public class Main {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
+//6
+
+    /**
+     * This method computes the power of a number.
+     * Time complexity: O(n), where n is the exponent.
+     * @param a the base number.
+     * @param n the exponent.
+     * @return the result of raising  to the power of n.
+     */
+    private static int power(int a, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return a * power(a, n - 1);
+    }
 
     public static void main(String[] args) {
 // 1
@@ -164,5 +179,17 @@ public class Main {
         duration = (endTime - startTime) / 1000000.0;
         System.out.println("Problem 5: Fibonacci of " + fibInput2 + " is: " + fibResult2);
         System.out.println("Time taken: " + duration + " milliseconds");
+
+        //6
+
+        int base = 2;
+        int exponent = 10;
+        startTime = System.nanoTime();
+        int powerResult = power(base, exponent);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 6: " + base + "^" + exponent + " is: " + powerResult);
+        System.out.println("Time taken: " + duration + " milliseconds");
+
     }
 }
