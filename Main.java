@@ -120,6 +120,26 @@ public class Main {
         System.out.print(arr[index] + " ");
         printReverse(arr, index - 1);
     }
+    //8
+
+
+    /**
+     * Recursively checks if a string consists solely of digit characters.
+     * Time complexity: O(n), where n is the length of the string.
+     * @param s the string to be checked.
+     * @param index the current index in the recursion.
+     * @return true if the string consists only of digits, false otherwise.
+     */
+    private static boolean isAllDigits(String s, int index) {
+        if (index == s.length()) {
+            return true;
+        }
+        char ch = s.charAt(index);
+        if (ch < '0' || ch > '9') {
+            return false;
+        }
+        return isAllDigits(s, index + 1);
+    }
 
     public static void main(String[] args) {
 // 1
@@ -214,6 +234,34 @@ public class Main {
         endTime = System.nanoTime();
         duration = (endTime - startTime) / 1000000.0;
         System.out.println();
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+
+        //8
+        String s1 = "123456";
+        String s2 = "123a12";
+        startTime = System.nanoTime();
+        boolean digitsResult1 = isAllDigits(s1, 0);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.print("Problem 8: String \"" + s1 + "\" is ");
+        if (digitsResult1) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+        startTime = System.nanoTime();
+        boolean digitsResult2 = isAllDigits(s2, 0);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.print("Problem 8: String \"" + s2 + "\" is ");
+        if (digitsResult2) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
         System.out.println("Time taken: " + duration + " milliseconds");
 
     }
