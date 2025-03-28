@@ -108,7 +108,7 @@ public class Main {
 
     //7
     /**
-     * Recursively prints the elements of an array in reverse order.
+     * This method prints the elements of an array in reverse order.
      * Time complexity: O(n), where n is the number of elements in the array.
      * @param arr the array of integers.
      * @param index the current index for printing.
@@ -124,7 +124,7 @@ public class Main {
 
 
     /**
-     * Recursively checks if a string consists solely of digit characters.
+     * This method checks if a string consists solely of digit characters.
      * Time complexity: O(n), where n is the length of the string.
      * @param s the string to be checked.
      * @param index the current index in the recursion.
@@ -140,6 +140,23 @@ public class Main {
         }
         return isAllDigits(s, index + 1);
     }
+
+    //9
+    /**
+     * This method calculates the binomial coefficient C(n, k).
+     * Time complexity: Exponential in n (O(2^n)) in the worst-case due to overlapping subproblems.
+     * @param n the total number of items.
+     * @param k the number of items to choose.
+     * @return the binomial coefficient C(n, k).
+     */
+    private static int binomialCoefficient(int n, int k) {
+        if (k == 0 || k == n) {
+            return 1;
+        }
+        return binomialCoefficient(n - 1, k - 1) + binomialCoefficient(n - 1, k);
+    }
+
+
 
     public static void main(String[] args) {
 // 1
@@ -264,5 +281,21 @@ public class Main {
         }
         System.out.println("Time taken: " + duration + " milliseconds");
 
+        //9
+        int n1 = 2, k1 = 1;
+        int n2 = 7, k2 = 3;
+        startTime = System.nanoTime();
+        int binom1 = binomialCoefficient(n1, k1);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 9: C(" + n1 + "," + k1 + ") is: " + binom1);
+        System.out.println("Time taken: " + duration + " milliseconds");
+
+        startTime = System.nanoTime();
+        int binom2 = binomialCoefficient(n2, k2);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 9: C(" + n2 + "," + k2 + ") is: " + binom2);
+        System.out.println("Time taken: " + duration + " milliseconds");
     }
 }
