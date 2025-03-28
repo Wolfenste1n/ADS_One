@@ -58,8 +58,20 @@ public class Main {
         return isPrime(n, divisor + 1);
     }
 
-
-
+//4
+    /**
+     * This method Calculates the factorial of a given number recursively.
+     * Time complexity: O(n), where n is the input number.
+     * @param n the number for which the factorial is calculated.
+     * @return the factorial of n.
+     */
+    private static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
 
 
 
@@ -111,5 +123,14 @@ public class Main {
         }
         System.out.println("Time taken: " + duration + " milliseconds");
 
+
+        //4
+        int factorialInput = 5;
+        startTime = System.nanoTime();
+        int factResult = factorial(factorialInput);
+        endTime = System.nanoTime();
+        duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Problem 4: Factorial of " + factorialInput + " is: " + factResult);
+        System.out.println("Time taken: " + duration + " milliseconds");
     }
 }
