@@ -21,28 +21,20 @@ Determines whether a given number is prime or composite.
 ### 4. Factorial Calculation
 Computes and returns the factorial of a specified number.
 
-
-
 ### 5. Finding an Element in the Fibonacci Sequence
-You are given a number “n” and an array of “n” elements,
-write the function that returns minimum of them. 
+Returns the n-th number in the Fibonacci sequence.
 
 ### 6. Exponentiation of a Number
-You are given a number “n” and an array of “n” elements,
-write the function that returns minimum of them. 
+Calculates the result of raising one number to the power of another.
 
 ### 7. Reversing an Array
-You are given a number “n” and an array of “n” elements,
-write the function that returns minimum of them. 
+Returns the array with its elements in reverse order.
 
 ### 8. Verifying if a String Contains Only Digits
-You are given a number “n” and an array of “n” elements,
-write the function that returns minimum of them.
+Checks whether a given string consists entirely of numeric characters.
 
 ### 9. Computing the Binomial Coefficient
-You are given a number “n” and an array of “n” elements,
-write the function that returns minimum of them. 
+Uses recursion to determine the binomial coefficient for given numbers.
 
 ### 10. Finding the Greatest Common Divisor (GCD)
-You are given a number “n” and an array of “n” elements,
-write the function that returns minimum of them. 
+Computes the greatest common divisor of two numbers using the Euclidean algorithm.
